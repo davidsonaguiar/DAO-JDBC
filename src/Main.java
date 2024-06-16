@@ -1,4 +1,6 @@
 import db.DB;
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 
@@ -15,6 +17,8 @@ public class Main {
 
             var seller = new Seller(21, "Bob", "bob@gmail.com", 3000.0, new Date(), department);
             System.out.println(seller);
+
+            SellerDao sellerDao = DaoFactory.createSellerDao();
         }
         catch (Exception e) {
             System.out.println("Error accessing database!");
